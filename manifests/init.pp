@@ -1,5 +1,5 @@
 class debian {
-  if $operatingsystem == "Debian" and $operatingsystemrelease == "6.0" {
+  if $operatingsystem == "Debian" and versioncmp($operatingsystemrelease, "6.0") >= 0 {
     $release = "squeeze"
   } else {
     $release = "lenny"
