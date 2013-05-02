@@ -1,10 +1,14 @@
 class debian {
   if $operatingsystem == "Debian" {
     if $operatingsystemrelease =~ /^[0-9\.]+$/ {
-      if versioncmp($operatingsystemrelease, "6.0") >= 0 {
-        $release = "squeeze"
+      if versioncmp($operatingsystemrelease, "7.0") >= 0 {
+        $release = "wheezy"
       } else {
-        $release = "lenny"
+        if versioncmp($operatingsystemrelease, "6.0") >= 0 {
+          $release = "squeeze"
+        } else {
+          $release = "lenny"
+        } 
       }
     } else {
       $release = $operatingsystemrelease ? {
@@ -21,6 +25,11 @@ class debian {
   
   $squeeze = $release ? {
     "squeeze" => true,
+    default => false
+  }
+
+  $wheezy = $release ? {
+    "wheezy" => true,
     default => false
   }
 }
