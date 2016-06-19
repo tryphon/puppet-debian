@@ -11,7 +11,7 @@ class debian {
             $release = "squeeze"
           } else {
             $release = "lenny"
-          } 
+          }
         }
       }
     } else {
@@ -21,17 +21,17 @@ class debian {
       }
     }
   }
- 
+
   $jessie = $release ? {
     "jessie" => true,
     default  => false
   }
- 
+
   $lenny = $release ? {
     "lenny" => true,
     default => false
   }
-  
+
   $squeeze = $release ? {
     "squeeze" => true,
     default => false
