@@ -64,11 +64,6 @@ class debian {
     }
   }
 
-  $jessie = $release ? {
-    "jessie" => true,
-    default  => false
-  }
-
   $lenny = $release ? {
     "lenny" => true,
     default => false
