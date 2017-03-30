@@ -1,3 +1,3 @@
-class debian::build-essential {
+class debian::build_essential {
   package { build-essential: }
 }
